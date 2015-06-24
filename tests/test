@@ -1,0 +1,11 @@
+---
+
+#!/bin/bash
+
+# test: Test docker_for_ubuntu
+# Copyright (C) 2015 Vsevolod Dolgopolov <zavalit@gmail.com>
+
+. "lib/test"
+
+assert_playbook_runs
+assert_playbook_idempotent

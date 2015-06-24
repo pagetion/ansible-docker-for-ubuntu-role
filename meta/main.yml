@@ -1,0 +1,26 @@
+---
+
+dependencies: []
+
+galaxy_info:
+  author: 'Vsevolod Dolgopolov'
+  description: 'docker-for-ubuntu described in 1 sentence...'
+  company: 'pagetion.com'
+  license: 'MIT'
+  min_ansible_version: '1.7.1'
+  platforms:
+    - name: Ubuntu
+      versions:
+        - trusty
+  categories: []
+
+ansigenome_info:
+  galaxy_id: ''
+
+  travis: True
+
+  synopsis: |
+    docker-for-ubuntu a docker setup for explicitly ubuntu 14.04
+
+  usage: |
+    Just run it as any other conform role 
