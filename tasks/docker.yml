@@ -1,18 +1,21 @@
 ---
 
 - name: Add Docker repository and update apt cache
+  sudo: yes
   apt_repository:
     repo: deb https://get.docker.com/ubuntu docker main
     update_cache: yes
     state: present
 
 - name: Docker is present
+  sudo: yes
   apt:
     name: lxc-docker
     state: present
     force: yes
 
 - name: Files are present
+  sudo: yes
   copy:
     src: docker
     dest: /etc/default/docker
