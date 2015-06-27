@@ -1,27 +1,11 @@
 ---
 
-- name: Add Docker repository and update apt cache
-  sudo: yes
-  apt_repository:
-    repo: deb https://get.docker.com/ubuntu docker main
-    update_cache: yes
-    state: present
 
-- name: Docker is present
-  sudo: yes
-  apt:
-    name: lxc-docker
-    state: present
-    force: yes
+- name: Install docker
+  sudo: no
+  shell: wget -qO- https://get.docker.com/ | sh
 
-- name: Files are present
-  sudo: yes
-  copy:
-    src: docker
-    dest: /etc/default/docker
-  notify:
-    - Reload docker
 
 - name: Add user to docker group
   shell: sudo usermod -aG docker ${USER}
-  sudo: no
+  sudo: no  
