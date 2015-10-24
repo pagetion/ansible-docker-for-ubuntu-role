@@ -3,14 +3,14 @@
     shell: docker -v | awk '{ print $3 }'
     ignore_errors: True
     register: current_docker_version
-  
-  - include: docker.yml 
-    when: current_docker_version.stdout|replace(",", '') != "{{ docker_version }}" 
-  
+
+  - include: docker.yml
+    when: current_docker_version.stdout == ""
+
   - name: Check docker-compose version
     shell: docker-compose --version | awk '{ print $2 }'
     ignore_errors: True
     register: current_docker_compose_version
-  
+
   - include: docker-compose.yml
     when: current_docker_compose_version.stdout != "{{ docker_compose_version }}"
