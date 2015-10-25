@@ -12,7 +12,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - trusty
-  categories: []
+  categories: [docker]
 
 ansigenome_info:
   galaxy_id: ''
